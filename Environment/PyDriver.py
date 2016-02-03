@@ -156,6 +156,8 @@ class WDriver(Wd.Remote):
         numRetry = 0
         driverTimeout = configTest.getConfig('config', 'drivertimeout')
         driverRetry = configTest.getConfig('config', 'driverretry')
+        self.logfolder = configTest.getConfig('system', 'logfolder')
+        self.drivername = 'Selenium'
         while (webdriver_success==0) and (numRetry<driverRetry):
             webdriver_success = 1
             numRetry+=1
@@ -185,6 +187,8 @@ class MDriver(Md.Remote):
         numRetry = 0
         driverTimeout = configTest.getConfig('config', 'drivertimeout')
         driverRetry = configTest.getConfig('config', 'driverretry')
+        self.logfolder = configTest.getConfig('system', 'logfolder')
+        self.drivername = 'Appium'
         while (webdriver_success==0) and (numRetry<driverRetry):
             webdriver_success = 1
             numRetry+=1
