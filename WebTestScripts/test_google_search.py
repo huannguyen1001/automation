@@ -31,7 +31,7 @@ class TestCase(unittest.TestCase):
     def tearDown(self):
         if sys.exc_info()[0]:
             path = self.driver.logfolder + os.path.splitext(os.path.basename(__file__))[0] + '/'
-            if not os.path.isdir(path): os.mkdirs(path, 0755)
+            if not os.path.isdir(path): os.mkdir(path, 0755)
             test_method_name = self._testMethodName
             now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
             self.driver.save_screenshot(path + test_method_name + "-" + now + ".png")
