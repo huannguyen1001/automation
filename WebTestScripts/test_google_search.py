@@ -20,7 +20,7 @@ class TestCase(unittest.TestCase):
         log('Start test execution with script: ' + self.scriptname)
         driver = self.driver
         driver.get("http://www.google.com")
-        search = driver.find_element_by_name('q')
+        search = driver.find_element_by_name('q1')
         search.send_keys('sauce labs')
         search.send_keys(Keys.RETURN)
         time.sleep(5)
